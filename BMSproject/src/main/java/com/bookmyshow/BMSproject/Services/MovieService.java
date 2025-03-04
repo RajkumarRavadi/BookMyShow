@@ -103,6 +103,7 @@ public class MovieService {
 
     //this api is updating the movie ratings, language
     //need to fix the language if the language is not in the enum then it is breaking
+    //need to fix rating too if it is greater then 10 we need to perform some sort of actions
     public ResponseEntity<String> update(UpdateRequest updateRequest){
         //check is the movie with movie name exists or not
         Movie movie = movieRepository.findMovieByMovieName(updateRequest.getMovieName());
