@@ -120,6 +120,11 @@ public class TheaterService {
             return ResponseEntity.status(HttpStatus.BAD_REQUEST).body("No seats to associate with the theater.");
         }
 
+
+        theater.setTheaterSeatsList(theaterSeatsList);
+        theaterRepository.save(theater);
+
+
         // Save the theater seats to the DB
         theaterSeatsRepository.saveAll(theaterSeatsList);
 
