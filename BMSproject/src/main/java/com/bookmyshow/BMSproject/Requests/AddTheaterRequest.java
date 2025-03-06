@@ -1,13 +1,14 @@
 package com.bookmyshow.BMSproject.Requests;
 
 import com.bookmyshow.BMSproject.Enum.TheaterType;
-import jakarta.persistence.Column;
-import jakarta.persistence.EnumType;
-import jakarta.persistence.Enumerated;
+import lombok.AllArgsConstructor;
 import lombok.Data;
+import lombok.NoArgsConstructor;
 
 @Data
-public class AddTheater {
+@AllArgsConstructor
+@NoArgsConstructor
+public class AddTheaterRequest {
     private String name;
     private Integer totalScreens;
     private TheaterType theaterType;
