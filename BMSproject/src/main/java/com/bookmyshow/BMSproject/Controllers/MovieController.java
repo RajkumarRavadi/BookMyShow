@@ -26,10 +26,8 @@ public class MovieController {
 
     @PostMapping("add")
     public ResponseEntity<String> addMovie(@RequestBody AddMovieRequest movieRequest) {
-        String message = movieService.addMovie(movieRequest);
-        return ResponseEntity.status(HttpStatus.CREATED).body(message);
+        return movieService.addMovie(movieRequest);
     }
-
 
     //return an api to return the list of all movies
     @GetMapping("/allMovies")
@@ -42,8 +40,10 @@ public class MovieController {
         return movieService.deleteMovie(id);
     }
 
+    //This api return the list of top rated movies
+    //where the condition is all the movies with rating above 7 are treated as top rated movies
     @GetMapping("topRatedMovie")
-    public ResponseEntity<String> topRatedMovie(){
+    public ResponseEntity<List<String>> topRatedMovie(){
         return movieService.topRatedMovie();
     }
 

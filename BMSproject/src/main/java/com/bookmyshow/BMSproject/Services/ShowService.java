@@ -70,6 +70,10 @@ public class ShowService {
         }
 
 
+        //setting the bidirectional mapping
+        show.setShowSeatList(showSeatsList);
+
+
         showSeatRepository.saveAll(showSeatsList);
 
         return ResponseEntity.status(HttpStatus.OK).body("Show is successfully save to the DB with show id : " + show.getShowId());
